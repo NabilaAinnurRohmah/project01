@@ -7,7 +7,7 @@
 
 <h2>Caesar Cipher</h2>
 
-<form method="POST" action="/caesar">
+<form method="POST" action="caesar">
     @csrf
 
     Teks:<br>
