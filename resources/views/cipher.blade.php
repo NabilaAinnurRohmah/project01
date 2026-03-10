@@ -3,65 +3,97 @@
 <head>
     <title>Caesar Cipher</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #45a049;
+        }
+
+        .hasil{
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+
+    </style>
 
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
+<div class="container">
 
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<h2>Caesar Cipher</h2>
 
-            <div class="card shadow">
-                <div class="card-header text-center bg-primary text-white">
-                    <h4>Caesar Cipher</h4>
-                </div>
+<form method="POST" action="caesar">
+    @csrf
 
-                <div class="card-body">
+    <label>Teks</label>
+    <input type="text" name="teks" required>
 
-                    <form method="POST" action="caesar">
-                        @csrf
+    <label>Kunci</label>
+    <input type="number" name="kunci" required>
 
-                        <div class="mb-3">
-                            <label class="form-label">Teks</label>
-                            <input type="text" name="teks" class="form-control" required>
-                        </div>
+    <label>Pilih Mode</label>
+    <select name="mode" required>
+        <option value="">-- Pilih --</option>
+        <option value="enkripsi">Enkripsi</option>
+        <option value="dekripsi">Dekripsi</option>
+    </select>
 
-                        <div class="mb-3">
-                            <label class="form-label">Kunci</label>
-                            <input type="number" name="kunci" class="form-control" required>
-                        </div>
+    <button type="submit">Proses</button>
+</form>
 
-                        <div class="mb-3">
-                            <label class="form-label">Pilih Mode</label>
-                            <select name="mode" class="form-select" required>
-                                <option value="">-- Pilih --</option>
-                                <option value="enkripsi">Enkripsi</option>
-                                <option value="dekripsi">Dekripsi</option>
-                            </select>
-                        </div>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">
-                                Proses
-                            </button>
-                        </div>
-
-                    </form>
-
-                    @if(isset($hasil))
-                        <div class="alert alert-success mt-4 text-center">
-                            <strong>Hasil:</strong> {{ $hasil }}
-                        </div>
-                    @endif
-
-                </div>
-            </div>
-
-        </div>
+@if(isset($hasil))
+    <div class="hasil">
+        <strong>Hasil:</strong> {{ $hasil }}
     </div>
+@endif
 
 </div>
 
