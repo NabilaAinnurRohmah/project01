@@ -1,0 +1,255 @@
+/*LOGIN*/
+.login-page{
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    width:360px;
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    animation:fadeIn 0.6s ease;
+}
+
+.login-box h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+    font-size:24px;
+}
+
+.login-box label{
+    font-weight:600;
+    font-size:14px;
+    color:#555;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.login-box input:focus{
+    border-color:#667eea;
+    box-shadow:0 0 5px rgba(102,126,234,0.4);
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box button{
+    position:absolute;
+    right:5px;
+    top:40px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:13px;
+    color:#667eea;
+}
+
+.login-box button[type="submit"]{
+    width:100%;
+    padding:12px;
+    background:#667eea;
+    border:none;
+    color:white;
+    font-weight:600;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button[type="submit"]:hover{
+    background:#5563d1;
+}
+
+.login-box a{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#667eea;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.login-box a:hover{
+    text-decoration:underline;
+}
+
+.error{
+    background:#ffe5e5;
+    color:#cc0000;
+    padding:10px;
+    border-radius:6px;
+    text-align:center;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Dashboard */
+.dashboard-page{
+    margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1739d1, #764ba2);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#667eea;
+    padding:15px 30px;
+    color:white;
+}
+
+.navbar h2{
+    margin:0;
+}
+
+.logout{
+    background:#ffffff;
+    color:rgb(81, 35, 156);
+    padding:8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.logout:hover{
+    background:#bcb2cc;
+}
+
+.dashboard-content{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:90px;
+    border-radius:12px;
+    width:1100px;
+    text-align: center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h1{
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:18px;
+    color:#555;
+}
+
+/* forgot password */
+
+.forgot-page{
+    margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(135deg,#0a1e61,#70105b);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.forgot-page .login-box{
+    background:white;
+    padding:40px;
+    width:360px;
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    animation:fadeIn 0.6s ease;
+}
+
+.forgot-page h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.forgot-page input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:14px;
+}
+
+.forgot-page input:focus{
+    border-color:#3b124e;
+    box-shadow:0 0 5px rgba(255,117,140,0.4);
+}
+
+.forgot-page button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#430a52;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.forgot-page button:hover{
+    background:#e2d2f3;
+}
+
+.forgot-page a{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#b95151;
+    text-decoration:none;
+}
+
+.forgot-page a:hover{
+    text-decoration:underline;
+}
+
+.forgotpass-box{
+    position:relative;
+}
+
+.forgotpass-box button{
+    position:absolute;
+    right:5px;
+    top:8px;
+    width:auto;
+    background:none;
+    color:#6e27ca;
+    font-size:13px;
+}

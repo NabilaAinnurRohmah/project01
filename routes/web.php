@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CipherController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [AuthController::class, 'showLogin']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/forgot-password', [AuthController::class, 'forgotPassword']);
+Route::post('/forgot-password', [AuthController::class, 'checkUsername']);
+Route::post('/reset-password', [AuthController::class, 'resetPassword']);
+
+Route::get('/dashboard', [AuthController::class, 'dashboard']);
+Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/caesar', [CipherController::class, 'index']);
 Route::post('/caesar', [CipherController::class, 'proses']);
