@@ -28,32 +28,9 @@ class AuthController extends Controller
 
     }
 
-    public function dashboard() {
-        if(!session()->has('user')){
-            return redirect('/login');
-        }
-
-        return view('/dashboard');
-    }
-
     public function logout () {
         session()->forget('user');
         return redirect('/login');
     }
 
-    public function forgotPassword() {
-        return view('forgot-password');
-    }
-
-    public function checkUsername (Request $request) {
-        if($request->username == "nabila") {
-            return view('forgot-password', ['step' => 'reset']);
-        }
-        return back()->with('error', 'Username Tidak Ditemukan');
-    }
-
-    public function resetPassword (Request $request)  {
-        session(['password' => $request->password]);
-        return redirect('/login')->with('success', 'Password Berhasil Diganti, Silahkan Login Ulang');
-    }
 }
