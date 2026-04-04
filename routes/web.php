@@ -16,6 +16,9 @@ use App\Http\Controllers\PasswordController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//semua yang bisa ditampilkan langsung lewat url itu get, ambil dari url. kelihatan di url
+//post itu untuk kirim data ke server, tidak terlihat urlnya. wajib pakai parameter request
 Route::get('/', function () {
     return view('welcome');
 });

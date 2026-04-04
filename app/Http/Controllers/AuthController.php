@@ -10,6 +10,7 @@ class AuthController extends Controller
     public function showLogin()
     {
         return view('login');
+        //diarahkan ke halaman itu (urlnya sama atau url sendiri)
     }
 
     public function login(Request $request)
@@ -22,6 +23,8 @@ class AuthController extends Controller
         if($username == "nabila" && $password == "$savedPassword") {
             session(['user' => $username]);
             return redirect('/dashboard');
+            //diarahkan ulang ke halaman dashboard (urlnya dashboard)
+            //redirect diarahkan ulang ke halaman tertentu 
         }else{
             return back()->with('error', 'Username atau Password Salah, Silahkan Cek Kembali');
         }

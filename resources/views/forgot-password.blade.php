@@ -9,7 +9,7 @@
     <body class="forgot-page">
         <div class="login-box">
 
-            @if(!isset($step))
+            @if(isset($step) && $step == 'reset')
 
         <h2>Lupa Password</h2>
 
