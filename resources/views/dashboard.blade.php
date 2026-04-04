@@ -10,7 +10,6 @@
 
     <div class="dashboard-container">
 
-        <!-- Navbar -->
         <div class="navbar">
             <h2>My Dashboard</h2>
             <div class="nav-right">
@@ -19,16 +18,14 @@
             </div>
         </div>
 
-        <!-- Content -->
+
         <div class="dashboard-content">
 
-            <!-- Welcome (full width) -->
             <div class="dashboard-card main-card">
                 <h1>Welcome Back</h1>
                 <p>Selamat datang, <b>{{ session('user') }}</b> di dashboard kamu.</p>
             </div>
 
-            <!-- Stats (di bawah, berjajar) -->
             <div class="stats">
                 <div class="dashboard-card small-card">
                     <h3>📊 Total Login</h3>
