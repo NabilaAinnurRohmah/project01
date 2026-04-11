@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\pengguna;
 
 class DashboardController extends Controller
 {
@@ -13,17 +12,6 @@ class DashboardController extends Controller
             return redirect('/login');
         }
 
-        $data = pengguna::all();
-
-        return view('daftarpengguna', compact('data'));
+        return view('dashboard');
     }
 }
-
-/*public function index()
-    {
-        if(!session()->has('user')){
-            return redirect('/login');
-        }
-
-        return view('dashboard');
-    }*/

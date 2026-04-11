@@ -5,6 +5,7 @@ use App\Http\Controllers\CipherController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\PenggunaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,13 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/pengguna', [PenggunaController::class, 'index']) ->name ('pengguna.index');
+Route::get('/pengguna/{id}', [PenggunaController::class, 'show']) ->name ('pengguna.show');
+Route::post('/pengguna', [PenggunaController::class, 'store']) ->name('pengguna.store');
+Route::get('/pengguna/{id}/edit', [PenggunaController::class, 'edit']) ->name('pengguna.edit');
+Route::put('/pengguna/{id}', [PenggunaController::class, 'update']) ->name('pengguna.update');
+Route::delete('/pengguna/{id}', [PenggunaController::class, 'destroy']) ->name('pengguna.destroy');
 
 Route::get('/forgot-password', [PasswordController::class, 'forgotPassword']);
 Route::post('/forgot-password', [PasswordController::class, 'checkUsername']);

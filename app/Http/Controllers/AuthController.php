@@ -23,7 +23,7 @@ class AuthController extends Controller
         if($username == "nabila" && $password == "$savedPassword") {
             //session itu array, user itu indexnya
             session(['user' => $username]);
-            return redirect('/dashboard');
+            return redirect('/pengguna');
             //diarahkan ulang ke halaman dashboard (urlnya dashboard)
             //redirect diarahkan ulang ke halaman tertentu 
         }else{
