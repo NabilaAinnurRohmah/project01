@@ -93,7 +93,7 @@
         <div class="card">
             <h2>Edit Pengguna</h2>
 
-            <form action="/pengguna/{{ $data->id }}" method="POST">
+            <form action="{{ route('pengguna.update', $data->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 

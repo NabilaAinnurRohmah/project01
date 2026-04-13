@@ -135,13 +135,13 @@
 
                         <td>
                             {{-- DETAIL --}}
-                            <a href="/pengguna/{{ $item->id }}" class="btn btn-add">Detail</a>
+                            <a href="{{ route('pengguna.show', $item->id) }}" class="btn btn-add">Detail</a>
 
                             {{-- EDIT --}}
-                            <a href="/pengguna/{{ $item->id }}/edit" class="btn btn-edit">Edit</a>
+                            <a href="{{ route('pengguna.edit', $item->id) }}" class="btn btn-edit">Edit</a>
 
                             {{-- DELETE --}}
-                            <form action="/pengguna/{{ $item->id }}" method="POST" class="inline">
+                            <form action="{{ route('pengguna.destroy', $item->id) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-delete" onclick="return confirm('Yakin hapus?')">
