@@ -103,7 +103,6 @@
     <div class="container">
         <h2>Daftar Pengguna</h2>
 
-        {{-- FORM TAMBAH --}}
         <div class="form-box">
             <form action="/pengguna" method="POST">
                 @csrf
@@ -115,7 +114,6 @@
             <a href="/logout" class="logout">Logout</a>
         </div>
 
-        {{-- TABEL --}}
         <table>
             <thead>
                 <tr>
@@ -134,13 +132,10 @@
                         <td>********</td>
 
                         <td>
-                            {{-- DETAIL --}}
                             <a href="{{ route('pengguna.show', $item->id) }}" class="btn btn-add">Detail</a>
 
-                            {{-- EDIT --}}
                             <a href="{{ route('pengguna.edit', $item->id) }}" class="btn btn-edit">Edit</a>
 
-                            {{-- DELETE --}}
                             <form action="{{ route('pengguna.destroy', $item->id) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
