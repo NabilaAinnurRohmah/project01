@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,5 @@ Route::post('/reset-password', [PasswordController::class, 'resetPassword']);
 
 Route::get('/caesar', [CipherController::class, 'index']);
 Route::post('/caesar', [CipherController::class, 'proses']);
+
+Route::get('/buku', [BukuController::class, 'index']);
